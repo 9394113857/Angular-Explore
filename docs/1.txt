@@ -1,0 +1,9 @@
+npm install 
+npm install bootstrap
+
+// now working okay:-
+ng s 
+
+// build.js for log of prodcution versions:-
+node build.js
+

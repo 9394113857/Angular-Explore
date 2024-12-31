@@ -1,0 +1,37 @@
+# gitignore-commands.txt
+
+# Common .gitignore Patterns:
+# Ignore node_modules directory (for Node.js projects)
+node_modules/
+
+# Ignore the build/ directory (for build outputs)
+build/
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore IDE files (e.g., for Visual Studio Code)
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore OS-generated files
+Thumbs.db
+
+# Git Commands Related to .gitignore:
+
+# To check the status of ignored files
+git status
+
+# To show all ignored files in your repository
+git ls-files --ignored --exclude-standard --others
+
+# To remove a file from Git's tracking while keeping it locally
+git rm --cached <file_name>
+
+# To update your .gitignore (e.g., add new files or patterns)
+nano .gitignore
+
+# To create a global .gitignore file for all repositories
+git config --global core.excludesfile ~/.gitignore_global

@@ -1,0 +1,26 @@
+# Step 1: Remove the existing Git repository
+# This command deletes the .git folder, which contains the Git history and configuration for the project.
+Remove-Item -Recurse -Force .git
+
+# Step 2: Reinitialize the Git repository
+# After deleting the .git folder, initialize a fresh Git repository in your project directory.
+git init
+
+# Step 3: Add all files to the repository
+# This command stages all files in the project directory, preparing them to be committed.
+git add .
+
+# Step 4: Commit the files to Git
+# The 'git commit' command creates the first commit in your newly initialized repository.
+# The -m flag allows you to provide a commit message; here, we use "Initial commit".
+git commit -m "Initial commit"
+
+# Step 5: Set up the remote repository (optional)
+# If you want to push your local repository to a remote server (e.g., GitHub or GitLab),
+# you must set the remote URL. Replace <your-remote-url> with the actual URL of your remote repository.
+git remote add origin <your-remote-url>
+
+# Step 6: Push the commit to the remote repository (optional)
+# This command pushes the initial commit to the remote repository you added earlier.
+# Use "master" or "main" based on your default branch name.
+git push -u origin master  # Use 'main' if that's your default branch name

@@ -1,0 +1,15 @@
+Here’s a merged, concise explanation based on your latest context:
+
+1.	First time running ng s: Angular asks if you want to share usage data (analytics) with the Angular team.
+2.	Subsequent times running ng s: It doesn't ask again since your choice (Yes/No) is saved locally and globally.
+3.	Backend Process: Each time you run ng s, Angular:
+o	Compiles the application (ng build behind the scenes).
+o	Bundles files like main.js, styles.css, polyfills.js, and runtime.js.
+o	Starts the Angular Live Development Server to serve your app at http://localhost:4200/.
+4.	Analytics Settings:
+o	Your preference for data sharing is saved and won’t be prompted again unless changed.
+o	You can modify analytics settings later using ng analytics enable or ng analytics disable.
+5.	Build Output: Angular displays compiled file sizes, build hash, and the time it took to generate the bundles, which gives you performance metrics.
+
+In short, the process stays the same after the first time: Angular serves the app while keeping your analytics setting intact and not prompting again.
+
