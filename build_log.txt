@@ -1,1 +1,2 @@
 Build completed successfully at Tue Dec 31 2024 18:05:26 GMT+0530 (India Standard Time): First Build Properly from Office Ssytem as on:- 31-12-24 around:- 6:05 PM
+Build completed successfully at Tue Dec 31 2024 18:54:37 GMT+0530 (India Standard Time): Home,Api and Not-Found working and in netlify also same these are working as of now from Office-System as on:- 31-12-24 after:- 6:00 PM
