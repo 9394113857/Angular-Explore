@@ -7,11 +7,15 @@ import { FlaskComponent } from './flask/flask.component';
 import { DjangoComponent } from './django/django.component';
 import { ApiComponent } from './api/api.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 // Custom routes defined:-
 const routes: Routes = [
   {
     path:'',component:HomeComponent
+  },
+  {
+    path:'template-driven-forms',component:TemplateDrivenComponent
   },
   {
     path:'flask',component:FlaskComponent

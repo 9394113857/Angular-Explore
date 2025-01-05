@@ -1,0 +1,132 @@
+/* General Form Styling */
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  /* Input Fields Styling */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    border-color: #0056b3;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Labels */
+  label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Error Messages */
+  small {
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+  div {
+    margin-bottom: 20px;
+  }
+  
+  /* Submit Button Styling */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Reset Button Styling */
+  button[type="button"] {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Popup Alerts */
+  .popup {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffdddd;
+    border: 1px solid #f44336;
+    border-radius: 4px;
+    color: #f44336;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .popup p {
+    margin: 0;
+  }
+  
+  /* Confirmation Message */
+  .confirmation {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: #155724;
+    font-size: 16px;
+  }
+  
+  .confirmation h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .confirmation p {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  

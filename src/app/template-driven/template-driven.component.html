@@ -1,0 +1,84 @@
+<div class="container">
+    <h1>Template-driven Form Example</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+      <!-- Username -->
+      <div>
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="user.username"
+          required
+          #username="ngModel"
+          placeholder="Enter your username"
+        />
+        <div *ngIf="username.invalid && username.touched">
+          <small *ngIf="username.errors?.['required']">Username is required.</small>
+        </div>
+      </div>
+  
+      <!-- Email -->
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+          #email="ngModel"
+          placeholder="Enter your email"
+        />
+        <div *ngIf="email.invalid && email.touched">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Enter a valid email.</small>
+        </div>
+      </div>
+  
+      <!-- Password -->
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          placeholder="Enter your password (min 6 characters)"
+        />
+        <div *ngIf="password.invalid && password.touched">
+          <small *ngIf="password.errors?.['required']">Password is required.</small>
+          <small *ngIf="password.errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </small>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="userForm.invalid">Submit</button>
+      <button type="button" (click)="userForm.reset()">Reset</button>
+    </form>
+  
+    <!-- Popup Alerts -->
+    <div *ngIf="usernameAlert" class="popup">
+      <p>Username is required! Please enter a username.</p>
+    </div>
+    <div *ngIf="emailAlert" class="popup">
+      <p>Email is required! Please enter a valid email address.</p>
+    </div>
+    <div *ngIf="passwordAlert" class="popup">
+      <p>Password is required! Please enter a password with at least 6 characters.</p>
+    </div>
+  
+    <!-- Confirmation Message -->
+    <div *ngIf="formSubmitted && !usernameAlert && !emailAlert && !passwordAlert" class="confirmation">
+      <h2>Form Submitted Successfully!</h2>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Password:</strong> {{ user.password }}</p>
+    </div>
+  </div>
+  
