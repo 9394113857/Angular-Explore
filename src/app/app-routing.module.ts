@@ -8,6 +8,7 @@ import { DjangoComponent } from './django/django.component';
 import { ApiComponent } from './api/api.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 // Custom routes defined:-
 const routes: Routes = [
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path:'template-driven-forms',component:TemplateDrivenComponent
+  },
+  {
+    path:'reactive-forms',component:ReactiveFormComponent
   },
   {
     path:'flask',component:FlaskComponent

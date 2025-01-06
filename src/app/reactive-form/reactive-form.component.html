@@ -1,0 +1,148 @@
+<div class="container">
+    <h1>Reactive Form - User Registration</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" placeholder="Enter your username" class="form-control" />
+        <small *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched">
+          Username is required and must be at least 3 characters.
+        </small>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email" class="form-control" />
+        <small *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+          Enter a valid email address.
+        </small>
+      </div>
+  
+      <!-- Phone Field -->
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone number" class="form-control" />
+        <small *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched">
+          Phone number must be 10 digits.
+        </small>
+      </div>
+  
+      <!-- Address Field -->
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" formControlName="address" placeholder="Enter your address" class="form-control"></textarea>
+        <small *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched">
+          Address is required.
+        </small>
+      </div>
+  
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password" class="form-control" />
+        <small *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+          Password must be at least 6 characters.
+        </small>
+      </div>
+  
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm your password" class="form-control" />
+        <small *ngIf="userForm.get('confirmPassword')?.invalid && userForm.get('confirmPassword')?.touched">
+          Passwords must match.
+        </small>
+      </div>
+  
+      <!-- Gender Field (Radio Buttons) -->
+      <div class="form-group">
+        <label>Gender:</label>
+        <div>
+          <label for="male">Male</label>
+          <input type="radio" id="male" formControlName="gender" value="male" />
+          <label for="female">Female</label>
+          <input type="radio" id="female" formControlName="gender" value="female" />
+        </div>
+      </div>
+  
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" formControlName="dob" class="form-control" />
+      </div>
+  
+      <!-- Hobbies Field -->
+      <div class="form-group">
+        <label>Hobbies:</label>
+        <div formArrayName="hobbies" *ngFor="let hobby of hobbies.controls; let i = index">
+          <input type="text" [formControlName]="i" placeholder="Enter hobby {{ i + 1 }}" class="form-control hobby-input" />
+          <button type="button" (click)="removeHobby(i)" class="btn btn-danger btn-sm hobby-btn">Remove</button>
+        </div>
+        <button type="button" (click)="addHobby()" class="btn btn-primary btn-sm hobby-btn">Add Hobby</button>
+      </div>
+  
+      <!-- Terms and Conditions -->
+      <div class="form-group">
+        <label for="terms">Accept Terms and Conditions:</label>
+        <input type="checkbox" id="terms" formControlName="terms" />
+        <small *ngIf="userForm.get('terms')?.invalid && userForm.get('terms')?.touched">
+          You must accept the terms and conditions.
+        </small>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="userForm.invalid" class="btn btn-success btn-submit">
+        Submit
+      </button>
+    </form>
+  
+    <!-- Display Submitted Data -->
+    <div *ngIf="submittedData" class="confirmation">
+      <h2>Form Submitted Successfully!</h2>
+      <p><strong>Submitted Details:</strong></p>
+      <table class="submitted-details">
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td>{{ submittedData.username }}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{ submittedData.email }}</td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td>{{ submittedData.phone }}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{{ submittedData.address }}</td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>••••••</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>{{ submittedData.gender }}</td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td>{{ submittedData.dob }}</td>
+        </tr>
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <ul>
+              <li *ngFor="let hobby of submittedData.hobbies">{{ hobby }}</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  

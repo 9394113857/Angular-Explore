@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlaskService } from './flask.service';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
     DjangoComponent,
     ApiComponent,
     NotFoundComponent,
-    TemplateDrivenComponent
+    TemplateDrivenComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
