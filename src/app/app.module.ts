@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlaskService } from './flask.service';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ApiComponent,
     NotFoundComponent,
     TemplateDrivenComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,

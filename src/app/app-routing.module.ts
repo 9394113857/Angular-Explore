@@ -9,6 +9,7 @@ import { ApiComponent } from './api/api.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 // Custom routes defined:-
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:'reactive-forms',component:ReactiveFormComponent
+  },
+  {
+    path:'form-validation',component:FormValidationComponent
   },
   {
     path:'flask',component:FlaskComponent
