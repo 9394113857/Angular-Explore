@@ -1,4 +1,3 @@
-<!-- registration.component.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +79,36 @@
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <div *ngIf="submittedData" class="mt-5">
+      <h2>Submitted Data</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>ZIP</th>
+            <th>Email</th>
+            <th>Sex</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ submittedData.userid }}</td>
+            <td>{{ submittedData.passid }}</td>
+            <td>{{ submittedData.username }}</td>
+            <td>{{ submittedData.address }}</td>
+            <td>{{ submittedData.country }}</td>
+            <td>{{ submittedData.zip }}</td>
+            <td>{{ submittedData.email }}</td>
+            <td>{{ submittedData.sex }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 </html>

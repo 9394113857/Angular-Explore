@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-form-validation',
   templateUrl: './form-validation.component.html',
@@ -15,11 +16,21 @@ export class FormValidationComponent {
   zip: string = '';
   email: string = '';
   sex: string = '';
+  submittedData: any;
 
   onFormSubmit(form: NgForm): void {
     if (this.formValidation(form)) {
       console.log('Form submitted successfully!');
-      // You can perform any further actions here
+      this.submittedData = { 
+        userid: this.userid, 
+        passid: this.passid, 
+        username: this.username, 
+        address: this.address, 
+        country: this.country, 
+        zip: this.zip, 
+        email: this.email, 
+        sex: this.sex 
+      };
     }
   }
 
@@ -102,7 +113,7 @@ export class FormValidationComponent {
   }
 
   ValidateEmail(uemail: string): boolean {
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const mailformat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (uemail.match(mailformat)) {
       return true;
     } else {
@@ -111,14 +122,11 @@ export class FormValidationComponent {
     }
   }
 
-  validsex(sex: string): boolean {
-    if (sex !== 'Male' && sex !== 'Female') {
-      alert('Select Male/Female');
+  validsex(usex: string): boolean {
+    if (usex === '') {
+      alert('Select Male/Female gender');
       return false;
-    } else {
-      alert('Form Successfully Submitted');
-      return true;
     }
+    return true;
   }
-
-}//main class
+}

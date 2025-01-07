@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // custom error resolved after this import
-import { ReactiveFormsModule } from '@angular/forms'; // custom error resolved after this import
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import for template-driven and reactive forms
+import { HttpClientModule } from '@angular/common/http'; // Import for HTTP services
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,11 +10,10 @@ import { FlaskComponent } from './flask/flask.component';
 import { DjangoComponent } from './django/django.component';
 import { ApiComponent } from './api/api.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FlaskService } from './flask.service';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
+import { FlaskService } from './flask.service';
 
 @NgModule({
   declarations: [
@@ -26,17 +25,16 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
     NotFoundComponent,
     TemplateDrivenComponent,
     ReactiveFormComponent,
-    FormValidationComponent
+    FormValidationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, //This will resolve the ngModel binding error.
-    ReactiveFormsModule, // ReactiveFormsModule from @angular/forms to enable reactive form functionality
-
+    FormsModule, // Template-driven forms support
+    ReactiveFormsModule, // Reactive forms support
   ],
-  providers: [FlaskService,],
-  bootstrap: [AppComponent]
+  providers: [FlaskService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
